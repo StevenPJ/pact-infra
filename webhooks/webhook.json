@@ -1,0 +1,20 @@
+{
+  "consumer": {
+    "name": "pact-consumer"
+  },
+  "provider": {
+    "name": "pact-producer"
+  },
+  "request": {
+    "method": "POST",
+    "url": "http://jenkins:8080/job/pact-producer-run-contract-tests/buildWithParameters?pactConsumerTags=${pactbroker.consumerVersionTags}",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "events": [
+    {
+      "name": "contract_content_changed"
+    }
+  ]
+}
